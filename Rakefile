@@ -1,4 +1,3 @@
-require 'bundler/gem_tasks'
 require 'rake/testtask'
 
 # creates the rake test task used to run the minitest specs
