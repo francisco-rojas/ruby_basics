@@ -1,2 +1,3 @@
-# ruby_basics
-Ruby's basic concepts
+Ruby Basics
+===========
+This is a simple project that explains the basics of the ruby language.
