@@ -50,7 +50,7 @@ describe MyClass do
     end
   end
 
-  describe 'class variables' do
+  describe 'class variables & class instance variables' do
     it 'accesses the MyClass class variables' do
       MyClass.my_class_var.must_equal 'a class variable'
       MyClass.new.my_class_var.must_equal 'a class variable'
@@ -67,6 +67,10 @@ describe MyClass do
 
     it 'lists the MyClass class variables' do
       MyClass.instance_variables.must_equal [:@my_class_instance_var]
+    end
+
+    it 'does not retrieve the value of the MyClass instance variable' do
+      MyClass.new.my_class_instance_var.must_equal nil
     end
   end
 end

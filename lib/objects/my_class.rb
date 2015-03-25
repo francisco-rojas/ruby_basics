@@ -2,15 +2,26 @@ class MyClass
   @@my_class_var = 'a class variable'
   @my_class_instance_var = 'a class instance variable'
 
+  # defines a class method that returns @@my_class_var
   def self.my_class_var
     @@my_class_var
   end
 
+  # defines an instance method that returns @@my_class_var
   def my_class_var
     @@my_class_var
   end
 
+  # defines a class method that returns @my_class_instance_var
   def self.my_class_instance_var
+    @my_class_instance_var
+  end
+
+  # defines an instance method that returns @my_class_instance_var
+  # however this variable is not really the class instance variable defined above
+  # because this is an instance method the @my_class_instance_var is an instance variable
+  # not a class instance variable
+  def my_class_instance_var
     @my_class_instance_var
   end
 
