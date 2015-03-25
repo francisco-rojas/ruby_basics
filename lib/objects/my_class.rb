@@ -1,4 +1,18 @@
 class MyClass
+  @@my_class_var = 'a class variable'
+  @my_class_instance_var = 'a class instance variable'
+
+  def self.my_class_var
+    @@my_class_var
+  end
+
+  def my_class_var
+    @@my_class_var
+  end
+
+  def self.my_class_instance_var
+    @my_class_instance_var
+  end
 
   # defines a class method called first_method using self
   def self.first_method
@@ -22,6 +36,7 @@ class MyClass
 
 
   # defines an instance method called first_method
+  # Note: instance method names don't clash with class methods names
   def first_method
     # self here is an instance of the MyClass class
     "called first_method on an instance of the #{self.class.name} class"

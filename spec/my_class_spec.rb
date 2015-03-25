@@ -49,4 +49,24 @@ describe MyClass do
       -> { MyClass.new.second_method }.must_raise NoMethodError
     end
   end
+
+  describe 'class variables' do
+    it 'accesses the MyClass class variables' do
+      MyClass.my_class_var.must_equal 'a class variable'
+      MyClass.new.my_class_var.must_equal 'a class variable'
+      MyClass.new.my_class_var.must_equal 'a class variable'
+    end
+
+    it 'accesses the MyClass class instance variables' do
+      MyClass.my_class_instance_var.must_equal 'a class instance variable'
+    end
+
+    it 'lists the MyClass class variables' do
+      MyClass.class_variables.must_equal [:@@my_class_var]
+    end
+
+    it 'lists the MyClass class variables' do
+      MyClass.instance_variables.must_equal [:@my_class_instance_var]
+    end
+  end
 end
